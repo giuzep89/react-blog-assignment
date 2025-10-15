@@ -1,0 +1,8 @@
+.default-link{
+    border-bottom: 1px solid transparent;
+}
+
+/*change the active link color to a variable color!!!*/
+.active-link{
+    border-bottom: 1px solid black;
+}
