@@ -1,6 +1,6 @@
 import './App.css'
 import logo from './assets/logo-white.png'
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home/Home.jsx'
 import NewPost from './pages/new-post/NewPost.jsx'
 import BlogIndex from './pages/blog-index/BlogIndex.jsx'
