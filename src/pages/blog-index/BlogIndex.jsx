@@ -12,9 +12,10 @@ function BlogIndex() {
     }
 
     return (
-        <main className="blog-index-main">
+        <main className="outer-container">
+            {/* TODO Maybe move the h1 inside the inner container? */}
             <h1>Bekijk alle {posts.length} posts op het platform</h1>
-            <div className="blog-index-container">
+            <div className="inner-container">
                 {posts.map((post) => {
                     return <article key={post.id}>
                       <h2 onClick={(e) => {goToPost(e, post.id)}}>{post.title}</h2>
