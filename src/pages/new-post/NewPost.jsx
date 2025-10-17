@@ -1,12 +1,21 @@
 import "./NewPost.css"
 import {useForm} from "react-hook-form";
-
+import {calculateReadingTime} from "../../helpers/calculateReadingTime.js";
 
 function NewPost() {
     const {register, handleSubmit, formState: {errors}} = useForm();
 
     function handleFormSubmit(formData) {
-        console.log(formData);
+        const readingTime = calculateReadingTime(formData.blogpost.length);
+        const timeOfSubmit = new Date;
+        const updatedFormData = {
+            ...formData,
+            shares: 0,
+            comments: 0,
+            readTime: readingTime,
+            created: timeOfSubmit.toISOString()
+        };
+        console.log(updatedFormData);
     }
 
     return (
@@ -45,7 +54,8 @@ function NewPost() {
                     </label>
                     <button type="submit">Toevoegen</button>
                 </form>
-                {errors.blogpost && <span style={{color: "red"}}>{errors.blogpost.message}</span>}
+                {/* Possibly apply the following model to implement error messages*/}
+                {/*{errors.blogpost && <span style={{color: "red"}}>{errors.blogpost.message}</span>}*/}
             </div>
         </main>
     )
