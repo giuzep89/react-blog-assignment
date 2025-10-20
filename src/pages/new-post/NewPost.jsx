@@ -1,9 +1,11 @@
 import "./NewPost.css"
-import {useForm} from "react-hook-form";
-import {calculateReadingTime} from "../../helpers/calculateReadingTime.js";
+import { useForm } from "react-hook-form";
+import { calculateReadingTime } from "../../helpers/calculateReadingTime.js";
+import { useNavigate } from "react-router-dom";
 
 function NewPost() {
     const {register, handleSubmit, formState: {errors}} = useForm();
+    const navigateToIndex = useNavigate();
 
     function handleFormSubmit(formData) {
         const readingTime = calculateReadingTime(formData.blogpost.length);
@@ -16,6 +18,7 @@ function NewPost() {
             created: timeOfSubmit.toISOString()
         };
         console.log(updatedFormData);
+        navigateToIndex("/index");
     }
 
     return (
