@@ -1,0 +1,3 @@
+/* I thought initially to add styling here for the individual nav <li> elements, but this component although reusable,
+is too small to deserve styling of its own. A dedicated CSS file with 2 lines of styling is quite ridiculous.
+Should the component get variations of style and different versions, maybe it'll be worth moving the styling here from the Navigation.css file.*/

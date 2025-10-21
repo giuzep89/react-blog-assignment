@@ -4,5 +4,22 @@
 
 /*change the active link color to a variable color!!!*/
 .active-link{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color-white);
+}
+
+nav ul{
+    background-color: var(--color-secondary);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+nav li {
+    padding: var(--spacing-md);
+}
+
+nav img {
+    max-width: 230px;
 }

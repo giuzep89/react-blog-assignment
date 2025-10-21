@@ -1,5 +1,6 @@
-import {NavLink} from "react-router-dom";
 import "./Navigation.css";
+import NavItem from "../../components/nav-item/NavItem.jsx";
+import logo from "../../assets/logo-medium.png";
 
 
 function Navigation() {
@@ -7,15 +8,10 @@ function Navigation() {
     return (
         <nav>
             <ul>
-                <li><NavLink to="/" className={({isActive}) => isActive === true ? "active-link" : "default-link"}>
-                    Home
-                </NavLink></li>
-                <li><NavLink to="/index" className={({isActive}) => isActive === true ? "active-link" : "default-link"}>
-                    Alle posts
-                </NavLink></li>
-                <li><NavLink to="/new-post" className={({isActive}) => isActive === true ? "active-link" : "default-link"}>
-                    Nieuw Post
-                </NavLink></li>
+                <li><img src={logo} alt="logo"/></li>
+                <NavItem text="Home" linkTo="/" />
+                <NavItem text="Alle posts" linkTo="/index" />
+                <NavItem text="Nieuw post" linkTo="/new-post" />
             </ul>
         </nav>
     )

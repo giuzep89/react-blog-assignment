@@ -13,7 +13,6 @@ function BlogIndex() {
 
     return (
         <main className="outer-container">
-            {/* TODO Maybe move the h1 inside the inner container? */}
             <h1>Bekijk alle {posts.length} posts op het platform</h1>
             <div className="inner-container">
                 {posts.map((post) => {
