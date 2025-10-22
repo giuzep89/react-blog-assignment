@@ -1,7 +1,10 @@
+import "./Footer.css"
 
 function Footer() {
     return (
-        <footer>Blogventure © 2023 - ontiwikkeld voor NOVI Hogeschool</footer>
+        <footer>
+            <small>Blogventure © 2023 - ontiwikkeld voor NOVI Hogeschool</small>
+        </footer>
     )
 }
 

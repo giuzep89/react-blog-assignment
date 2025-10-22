@@ -25,7 +25,7 @@ function NewPost() {
     }
 
     return (
-        <main className="outer-container">
+        <main className="outer-container new-post">
             <div className="inner-container">
                 <h1>Post toevoegen</h1>
                 <form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -33,7 +33,7 @@ function NewPost() {
                     <Input label="Subtitel" type="text" name="subtitle" register={register} required={true} />
                     <Input label="Naam en achternaam" type="text" name="name" register={register} required={true} />
                     <Textarea label="Blogpost" register={register} name="blogpost" required={true} minLength={300} maxLength={2000} />
-                    <Button type="submit" text="Toevoegen" />
+                    <Button className="form-submit-button" type="submit" text="Toevoegen" />
                 </form>
                 {/* Possibly apply the following model to implement error messages*/}
                 {/*{errors.blogpost && <span style={{color: "red"}}>{errors.blogpost.message}</span>}*/}

@@ -1,5 +1,7 @@
-export default function Button ({type, text}){
+import "./Button.css"
+
+export default function Button ({className, type, text}){
     return (
-        <button type={type}>{text}</button>
+        <button className={className} type={type}>{text}</button>
     )
 }

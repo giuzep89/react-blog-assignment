@@ -1,18 +1,10 @@
-/*
-Styling: richt jouw project netjes in door alle overkoepelende styling in index.css te declareren. Denk hierbij aan:
-- Een CSS reset;
-- Font-declaraties en globale typografie toewijzingen voor titels, buttons en invoervelden;
-- CSS-variabelen voor de kleuren die je wil gebruiken;
-- Globale css-classes zoals de inner-container en outer-container;
-*/
-
-
 /* Global styles-----------------------------------------------------------------*/
 
 :root {
     --color-primary: #38E991;
     --color-secondary: #2C2F39;
     --color-tertiary: #50535C;
+    --color-lightgrey: #e8e9ed;
     --color-white: #FFFFFF;
 
     --spacing-xxs: 0.25rem;  /* 4px */
@@ -22,6 +14,8 @@ Styling: richt jouw project netjes in door alle overkoepelende styling in index.
     --spacing-lg:  1.5rem;   /* 24px */
     --spacing-xl:  2rem;     /* 32px */
     --spacing-xxl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 5rem;
 }
 
 * {
@@ -79,10 +73,23 @@ p {
 }
 
 .outer-container {
+    min-height: 100vh;
     width: 100%;
     padding: var(--spacing-xxl) var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-lightgrey);
 }
 
 .inner-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
 
+article, input, textarea {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.10);
 }

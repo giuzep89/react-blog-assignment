@@ -1,6 +1,7 @@
 export default function Textarea({label, register, name, required, minLength, maxLength }) {
     return (
-        <label>{label}
+        <>
+        <label htmlFor={name}>{label}</label>
         <textarea
                   {...register(name, {
                       required: {required},
@@ -13,6 +14,6 @@ export default function Textarea({label, register, name, required, minLength, ma
                           message: `De blogpost mag niet langer dan ${maxLength} karakters zijn`
                       }
                   })}></textarea>
-</label>
+        </>
     )
 }
