@@ -10,7 +10,7 @@ function Navigation() {
             <ul>
                 <li><img src={logo} alt="logo"/></li>
                 <NavItem text="Home" linkTo="/" />
-                <NavItem text="Alle posts" linkTo="/index" />
+                <NavItem text="Alle posts" linkTo="/posts" />
                 <NavItem text="Nieuw post" linkTo="/new-post" />
             </ul>
         </nav>

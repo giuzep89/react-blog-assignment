@@ -43,9 +43,3 @@ textarea {
     font-weight: 600;
     background-color: var(--color-primary);
 }
-
-.link-to-post {
-    color: var(--color-primary);
-    cursor: pointer;
-    text-decoration: underline;
-}

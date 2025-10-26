@@ -24,6 +24,6 @@ export async function createPost(postData) {
     return response.data;
 }
 
-export async function deletePost(id) {
+export async function deletePostById(id) {
     await axios.delete(`${BASE_URL}/blogposts/${id}`, { headers: HEADERS });
 }

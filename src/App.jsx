@@ -14,7 +14,7 @@ function App() {
             <Navigation />
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/index" element={<BlogIndex/>} />
+                <Route path="/posts" element={<BlogIndex/>} />
                 <Route path="/new-post" element={<NewPost/>} />
                 <Route path="/not-found" element={<NotFound/>} />
                 <Route path="/posts/:id" element={<BlogPost/>} />

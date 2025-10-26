@@ -9,10 +9,6 @@ function BlogIndex() {
     const navigate = useNavigate();
     const [allPosts, setAllPosts] = useState([]);
 
-    function goToPost(postId) {
-        navigate(`/posts/${postId - 1}`);
-    }
-
     useEffect(() => {
         async function getAllPosts() {
             setError(false);
@@ -48,9 +44,7 @@ function BlogIndex() {
                     {allPosts.length > 0 &&
                         allPosts.map((post) => {
                             return <article key={post.id}>
-                                <h2 onClick={() => {
-                                    goToPost(post.id)
-                                }}>{post.title} <span>({post.author})</span></h2>
+                                <h2 onClick={() => navigate(`/posts/${post.id}`)}>{post.title} <span>({post.author})</span></h2>
                                 <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
                             </article>
                         })

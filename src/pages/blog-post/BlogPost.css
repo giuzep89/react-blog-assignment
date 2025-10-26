@@ -10,8 +10,8 @@
     color: var(--color-tertiary);
 }
 
-.go-back-link {
+.delete-button{
     cursor: pointer;
-    color: var(--color-primary);
-    font-weight: 600;
+    max-width: 142px;
+    padding: var(--spacing-xs);
 }

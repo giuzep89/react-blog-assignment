@@ -6,7 +6,7 @@ import Textarea from "../../components/textarea/Textarea.jsx";
 import Button from "../../components/button/Button.jsx";
 import axios from "axios";
 import {useState} from "react";
-import {getAllPosts, getPostById} from "../../helpers/api.js";
+import {getAllPosts} from "../../helpers/api.js";
 import {Link} from "react-router-dom";
 
 function NewPost() {
@@ -14,8 +14,6 @@ function NewPost() {
     const [response, setResponse] = useState(false);
     const [error, setError] = useState(false);
     const [newPost, setNewPost] = useState({});
-
-    // const navigateToIndex = useNavigate();
 
     async function createPost({title, subtitle, content, author, created, readTime}) {
         try {
@@ -47,17 +45,23 @@ function NewPost() {
         setNewPost(lastPost);
     }
 
-    function handleFormSubmit(formData) {
+    async function handleFormSubmit(formData) {
         const readingTime = calculateReadingTime(formData.content.length);
-        const timeOfSubmit = new Date;
+        const timeOfSubmit = new Date();
         const updatedFormData = {
             ...formData,
             readTime: readingTime,
             created: timeOfSubmit.toISOString()
         };
-        createPost(updatedFormData);
-        getCreatedPost();
-        console.log(updatedFormData);
+
+        try {
+            await createPost(updatedFormData);
+            await getCreatedPost();
+            console.log(updatedFormData);
+        } catch (e) {
+            console.error(e);
+            setError(true);
+        }
     }
 
 
@@ -67,7 +71,7 @@ function NewPost() {
                 <h1>Post toevoegen</h1>
 
                 {response && isSubmitted &&
-                    <span>De blogpost is succesvol toegevoegd. Je kunt deze <Link className="link-to-post"
+                    <span>De blogpost is succesvol toegevoegd. Je kunt deze <Link className="link"
                         to={`/posts/${newPost.id}`}>hier</Link> bekijken</span>}
 
                 {error &&
