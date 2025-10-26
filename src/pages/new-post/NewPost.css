@@ -26,6 +26,15 @@ textarea {
     height: 120px;
 }
 
+.inner-container .field-error {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.page-error{
+    text-align: center;
+}
+
 .form-submit-button {
     margin: var(--spacing-xs) 0;
     border: none;
@@ -33,4 +42,10 @@ textarea {
     font-size: 0.9rem;
     font-weight: 600;
     background-color: var(--color-primary);
+}
+
+.link-to-post {
+    color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: underline;
 }
