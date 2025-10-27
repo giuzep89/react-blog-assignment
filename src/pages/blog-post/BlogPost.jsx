@@ -6,13 +6,11 @@ import Button from "../../components/button/Button.jsx";
 import "./BlogPost.css"
 import axios from "axios";
 import {deletePostById} from "../../helpers/api.js";
-import {useNavigate} from "react-router-dom"
 
 
 function BlogPost() {
     const {id} = useParams();
     const [error, setError] = useState(false);
-    const navigate = useNavigate();
     const [deleted, setDeleted] = useState(false);
     const [post, setPost] = useState({});
     const {
