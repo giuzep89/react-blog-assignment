@@ -11,7 +11,7 @@ function Navigation() {
                 <li><img src={logo} alt="logo"/></li>
                 <NavItem text="Home" linkTo="/" />
                 <NavItem text="Alle posts" linkTo="/posts" />
-                <NavItem text="Nieuw post" linkTo="/new-post" />
+                <NavItem text="Nieuwe post" linkTo="/new-post" />
             </ul>
         </nav>
     )
