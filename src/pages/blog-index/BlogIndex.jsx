@@ -1,7 +1,7 @@
 import "./BlogIndex.css"
 import {useNavigate} from "react-router-dom"
 import {useEffect, useState} from "react";
-import axios from "axios";
+import {getAllPosts} from "../../helpers/api.js";
 
 
 function BlogIndex() {
@@ -10,22 +10,17 @@ function BlogIndex() {
     const [allPosts, setAllPosts] = useState([]);
 
     useEffect(() => {
-        async function getAllPosts() {
+        async function fetchAllPosts() {
             setError(false);
             try {
-                const result = await
-                    axios.get("https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts",
-                        {
-                            headers: {'novi-education-project-id': 'c5b1327a-6c34-419a-8701-6b842cba268c'}
-                        });
-                setAllPosts(result.data);
-                console.log(result);
+                const posts = await getAllPosts();
+                setAllPosts(posts);
             } catch (e) {
                 console.error(e);
                 setError(true);
             }
         }
-        getAllPosts();
+        fetchAllPosts();
     }, []);
 
     if (error) {

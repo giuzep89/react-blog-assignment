@@ -4,9 +4,8 @@ import {calculateReadingTime} from "../../helpers/calculateReadingTime.js";
 import Input from '../../components/input/Input.jsx';
 import Textarea from "../../components/textarea/Textarea.jsx";
 import Button from "../../components/button/Button.jsx";
-import axios from "axios";
 import {useState} from "react";
-import {getAllPosts} from "../../helpers/api.js";
+import {getAllPosts, createPost} from "../../helpers/api.js";
 import {Link} from "react-router-dom";
 
 function NewPost() {
@@ -15,23 +14,18 @@ function NewPost() {
     const [error, setError] = useState(false);
     const [newPost, setNewPost] = useState({});
 
-    async function createPost({title, subtitle, content, author, created, readTime}) {
+    async function submitPost({title, subtitle, content, author, created, readTime}) {
         try {
-            // eslint-disable-next-line no-unused-vars
-            const response = await
-                axios.post('https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts',
-                    {
-                        title,
-                        subtitle,
-                        content,
-                        author,
-                        created,
-                        readTime,
-                        "comments": 0,
-                        "shares": 0
-                    }, {
-                        headers: {'novi-education-project-id': 'c5b1327a-6c34-419a-8701-6b842cba268c'}
-                    })
+            await createPost({
+                title,
+                subtitle,
+                content,
+                author,
+                created,
+                readTime,
+                comments: 0,
+                shares: 0
+            });
             setResponse(true);
         } catch (e) {
             console.error(e);
@@ -55,9 +49,8 @@ function NewPost() {
         };
 
         try {
-            await createPost(updatedFormData);
+            await submitPost(updatedFormData);
             await getCreatedPost();
-            console.log(updatedFormData);
         } catch (e) {
             console.error(e);
             setError(true);

@@ -4,8 +4,7 @@ import {formatDate} from "../../helpers/formatDate.js";
 import Footer from "../../components/footer/Footer.jsx";
 import Button from "../../components/button/Button.jsx";
 import "./BlogPost.css"
-import axios from "axios";
-import {deletePostById} from "../../helpers/api.js";
+import {getPostById, deletePostById} from "../../helpers/api.js";
 
 
 function BlogPost() {
@@ -25,22 +24,17 @@ function BlogPost() {
     } = post;
 
     useEffect(() => {
-        async function getPostById() {
+        async function fetchPost() {
             setError(false);
             try {
-                const response = await
-                    axios.get(`https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts/${id}`,
-                        {
-                            headers: {'novi-education-project-id': 'c5b1327a-6c34-419a-8701-6b842cba268c'}
-                        });
-                setPost(response.data);
-                console.log(response.data);
+                const post = await getPostById(id);
+                setPost(post);
             } catch (e) {
                 console.error(e);
                 setError(true);
             }
         }
-        getPostById();
+        fetchPost();
     }, [id]);
 
     async function handleDeletePost(id) {
