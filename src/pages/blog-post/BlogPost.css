@@ -1,0 +1,17 @@
+.blog-post {
+    background-color: var(--color-white) !important;
+}
+
+.blog-post .inner-container {
+    max-width: 80vw;
+}
+
+.reading-time, .comments-shares {
+    color: var(--color-tertiary);
+}
+
+.delete-button{
+    cursor: pointer;
+    max-width: 142px;
+    padding: var(--spacing-xs);
+}

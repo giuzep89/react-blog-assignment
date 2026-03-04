@@ -1,0 +1,27 @@
+.default-link{
+    border-bottom: 1px solid transparent;
+}
+
+/*change the active link color to a variable color!!!*/
+.active-link{
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+}
+
+nav ul{
+    background-color: var(--color-secondary);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+nav li {
+    padding: var(--spacing-md);
+    cursor: pointer;
+}
+
+nav img {
+    max-width: 230px;
+}

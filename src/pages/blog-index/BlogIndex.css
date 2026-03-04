@@ -1,0 +1,19 @@
+.posts-list{
+    gap: 1rem !important;
+}
+
+article{
+    background-color: var(--color-white);
+    padding-left: var(--spacing-sm);
+}
+
+article h2 {
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+article span {
+    font-weight: 300;
+    color: black;
+    font-size: 1.2rem;
+}

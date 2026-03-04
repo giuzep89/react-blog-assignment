@@ -1,0 +1,45 @@
+.new-post {
+    text-align: left;
+    font-weight: 600;
+}
+
+.new-post h1 {
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    min-width: 60vw;
+}
+
+input, textarea{
+    width: 100%;
+}
+
+input {
+    height: var(--spacing-xl);
+}
+
+textarea {
+    height: 120px;
+}
+
+.inner-container .field-error {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.page-error{
+    text-align: center;
+}
+
+.form-submit-button {
+    margin: var(--spacing-xs) 0;
+    border: none;
+    height: 32px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--color-primary);
+}
